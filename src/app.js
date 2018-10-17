@@ -8,6 +8,7 @@ import { View, AppState } from 'react-native';
 import { RNNetworkStateEventEmitter } from "react-native-network-state";
 import AppNavigator from './app-navigator';
 import Notifi from './notification';
+import { Alert, Loading } from './components';
 
 class App extends PureComponent {
   currentState = '';
@@ -51,6 +52,8 @@ class App extends PureComponent {
       <View style={{ flex: 1 }}>
         <AppNavigator />
         <Notifi />
+        <Loading ref={ref => window.customLoading = ref} loadingRef />
+        <Alert ref={ref => window.customAlert = ref} />
       </View>
     );
   }

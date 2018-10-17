@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.airbnb.android.react.maps.MapsPackage;
 import com.facebook.react.ReactApplication;
+import com.BV.LinearGradient.LinearGradientPackage;
 import com.reactnativecomponent.splashscreen.RCTSplashScreenPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.reactnativevietnam.RNNetworkStatePackage;
@@ -32,6 +33,7 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new MapsPackage(),
           new MainReactPackage(),
+            new LinearGradientPackage(),
             new RCTSplashScreenPackage(),
             new VectorIconsPackage(),
             new RNNetworkStatePackage(),

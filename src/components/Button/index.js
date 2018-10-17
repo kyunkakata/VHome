@@ -4,7 +4,13 @@
 */
 
 import Button from './Button';
+import ButtonLabelBorder from './ButtonLabelBorder';
+import ButtonLabel from './ButtonLabel';
+import ButtonIcon from './ButtonIcon';
 
 export {
-  Button
+  Button,
+  ButtonLabelBorder,
+  ButtonLabel,
+  ButtonIcon
 }

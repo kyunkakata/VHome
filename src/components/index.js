@@ -4,9 +4,16 @@
 */
 
 import { Navbar } from './Navbar';
-import { Button } from './Button';
+import { Button, ButtonLabelBorder, ButtonLabel, ButtonIcon } from './Button';
+import { Alert } from './Alert';
+import Loading from './Loading';
 
 export {
   Navbar,
-  Button
+  Button,
+  ButtonLabelBorder,
+  ButtonLabel,
+  ButtonIcon,
+  Alert,
+  Loading
 }

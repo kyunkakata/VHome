@@ -8,6 +8,7 @@ import { StyleSheet, View } from 'react-native';
 import { Navbar, Button } from '../../components';
 import * as common from '../../configs/common';
 import { Actions } from 'react-native-router-flux';
+import MapView from 'react-native-maps';
 
 class ForgotPassword extends PureComponent {
   render() {
@@ -19,11 +20,21 @@ class ForgotPassword extends PureComponent {
           back
         />
         <View style={styles.viewContent}>
-          <Button
+          {/* <Button
             title='Login'
             onPress={this.handLogin}
             rounded
-          />
+          /> */}
+          <MapView
+            style={styles.map}
+            region={{
+              latitude: 37.78825,
+              longitude: -122.4324,
+              latitudeDelta: 0.015,
+              longitudeDelta: 0.0121,
+            }}
+          >
+          </MapView>
         </View>
       </View>
     );
@@ -43,6 +54,9 @@ const styles = StyleSheet.create({
     backgroundColor: common.BACKGROUND_COLOR,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject,
   }
 });
 

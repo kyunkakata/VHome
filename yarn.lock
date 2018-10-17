@@ -4389,6 +4389,21 @@ react-native-drawer-layout@1.3.2:
   version "0.1.10"
   resolved "https://github.com/Nghi-NV/react-native-interactable.git#49e22f0109e797178d073ddee0cbffc044575baa"
 
+react-native-iphone-x-helper@^1.0.3:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.0.tgz#9f8a376eb00bc712115abff4420318a0063fa796"
+
+react-native-keyboard-aware-scroll-view@^0.7.3:
+  version "0.7.3"
+  resolved "https://registry.yarnpkg.com/react-native-keyboard-aware-scroll-view/-/react-native-keyboard-aware-scroll-view-0.7.3.tgz#63981afa613a7100b860ab534c6f444fefd0e0bc"
+  dependencies:
+    prop-types "^15.6.2"
+    react-native-iphone-x-helper "^1.0.3"
+
+react-native-linear-gradient@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.4.2.tgz#9d3acd0a198b9d4566e8f6253ef1f60fef0ff2be"
+
 react-native-localization@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/react-native-localization/-/react-native-localization-2.0.1.tgz#c012df9dbfe7f38a008342892dd0e82408833c42"

@@ -30,7 +30,7 @@ class Register extends PureComponent {
   }
 
   handLogin = () => {
-    Actions.pop()
+    Actions.forgotPassword()
   }
 }
 
