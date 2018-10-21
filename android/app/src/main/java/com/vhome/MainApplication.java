@@ -4,6 +4,9 @@ import android.app.Application;
 
 import com.airbnb.android.react.maps.MapsPackage;
 import com.facebook.react.ReactApplication;
+import com.reactnative.ivpusic.imagepicker.PickerPackage;
+import fr.bamlab.rnimageresizer.ImageResizerPackage;
+import com.RNFetchBlob.RNFetchBlobPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.reactnativecomponent.splashscreen.RCTSplashScreenPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -33,6 +36,9 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new MapsPackage(),
           new MainReactPackage(),
+            new PickerPackage(),
+            new ImageResizerPackage(),
+            new RNFetchBlobPackage(),
             new LinearGradientPackage(),
             new RCTSplashScreenPackage(),
             new VectorIconsPackage(),

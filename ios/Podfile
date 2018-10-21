@@ -44,19 +44,9 @@ target 'VHome' do
   pod 'GoogleMaps'  # Remove this line if you don't want to support GoogleMaps on iOS
   pod 'Google-Maps-iOS-Utils' # Remove this line if you don't want to support GoogleMaps on iOS
 
-  pod 'Interactable', :path => '../node_modules/react-native-interactable'
-
-  pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
-
-  pod 'ReactNativeLocalization', :path => '../node_modules/react-native-localization'
-
-  pod 'react-native-material-kit', :path => '../node_modules/react-native-material-kit'
-
-  pod 'RNNetworkState', :path => '../node_modules/react-native-network-state'
-
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
-
+  pod 'React', :path => '../node_modules/react-native'
   pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+  pod 'RNImageCropPicker', :path =>  '../node_modules/react-native-image-crop-picker'
 
 end
 

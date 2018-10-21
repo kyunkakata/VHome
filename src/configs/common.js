@@ -29,13 +29,50 @@ export const TEXT_COLOR_INACTIVE = '#8D8D8D';
 
 // icon
 export const ICON_COLOR_BLACK = '#000';
+export const ICON_COLOR_WHITE = '#fff';
+export const ICON_COLOR_ACTIVE = '#F27721';
 
 // Alert
 export const ALERT_BACKGROUND_COLOR = '#fff';
 export const ALERT_COLOR_TEXT = '#000';
 export const ALERT_COLOR_TEXT_ACTIVE = '#F27721';
 export const ALERT_COLOR_SEPARATOR = 'rgba(0, 0, 0, 0.3)';
+export const ALERT_BACKGROUND_COLOR_GRADIENT_1 = "#FDD301";
+export const ALERT_BACKGROUND_COLOR_GRADIENT_2 = "#F27920";
 
 //Loading
 export const LOADING_COLOR_ACTIVITY = '#fff';
 export const LOADING_BACKGROUND_COLOR = 'transparent';
+
+// Line
+export const LINE_BORDER_COLOR = "#F27721";
+
+// Textinput
+export const INPUT_BACKGROUND_COLOR = "#fff";
+export const INPUT_BORDER_COLOR = "rgba(0, 0, 0, 0.8)";
+export const INPUT_BACKGROUND_FORCUS = "#fff";
+export const INPUT_COLOR_TEXT_PLACEHOLDER = "rgba(0, 0, 0, 0.6)";
+export const INPUT_SELECTION_COLOR = "rgba(0, 0, 0, 0.6)";
+export const INPUT_COLOR_TEXT = "#000";
+export const INPUT_COLOR_ICON = "#F27721";
+
+// Checkbox
+export const CHECKBOX_BACKGROUND_COLOR = "#fff";
+export const CHECKBOX_FILL_COLOR = "rgba(0, 0, 0, 0.6)";
+export const CHECKBOX_ACTIVE_COLOR = "rgba(0, 0, 0, 0.6)";
+export const CHECKBOX_INACTIVE_COLOR = "rgba(0, 0, 0, 0.6)";
+export const CHECKBOX_TEXT_COLOR = "rgba(0, 0, 0, 0.8)";
+
+// Avartar
+export const AVATAR_BACKGROUND_COLOR = "rgba(0, 0, 0, 0.6)";
+
+// Row
+export const ROW_BACKGROUND_COLOR = "#fff";
+export const ROW_BORDER_COLOR = "rgba(0, 0, 0, 0.8)";
+
+// Actionsheet
+export const ACTION_SHEET_COLOR_SEPARATOR = "rgba(0, 0, 0, 0.3)";
+export const ACTION_SHEET_COLOR_TEXT_ACTIVE = "#F27721";
+export const ACTION_SHEET_COLOR_TEXT = "#000";
+export const ACTION_SHEET_BACKGROUND_COLOR = "#fff";
+export const ACTION_SHEET_COLOR_CHECK_ICON = "#F27721";

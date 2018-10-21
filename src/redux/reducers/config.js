@@ -12,6 +12,7 @@ const initialState = {
   vibrate: true,
   firstInstall: true,
   autoLogin: true,
+  isUser: true,
   user: {
     username: '',
     phonenumber: '',
@@ -26,6 +27,11 @@ export default function config(state = initialState, action) {
       return {
         ...state,
         language: action.payload
+      }
+    case types.CHANGE_TYPE_LOGIN:
+      return {
+        ...state,
+        isUser: action.payload
       }
     default:
       return state

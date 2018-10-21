@@ -3,7 +3,7 @@ import { StyleSheet, View, ActivityIndicator, Animated } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import * as common from '../../configs/common';
 
-class Loading extends PureComponent<Props> {
+class Loading extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -122,18 +122,6 @@ Loading.defaultProps = {
   colorIndicator: common.LOADING_COLOR_ACTIVITY,
   springConfig: { tension: 30, friction: 7 },
   loadingRef: false
-}
-
-type SpringConfigStatic = {
-  tension?: number;
-  friction?: number;
-}
-
-interface Props {
-  backgroundColor?: string;
-  colorIndicator?: string;
-  springConfig?: SpringConfigStatic;
-  loadingRef?: boolean;
 }
 
 export default Loading;

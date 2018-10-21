@@ -19,7 +19,8 @@ const mapDispathToProps = {
 
 const mapStateToProps = (state) => {
   return {
-    language: state.config.language
+    language: state.config.language,
+    isUser: state.config.isUser
   }
 }
 

@@ -4,7 +4,7 @@
 */
 
 import React, { PureComponent } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, Image, Dimensions, Platform } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Image, Dimensions, Platform, ViewStyle, TextStyle } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/dist/MaterialIcons';
 import { navigationBarHeight, statusBarHeight, paddingX } from '../../common/utils';
@@ -25,7 +25,9 @@ const styles = StyleSheet.create({
   },
   viewMiddle: {
     flex: 1,
-    height: navigationBarHeight
+    height: navigationBarHeight,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   viewRight: {
     height: 44
@@ -164,7 +166,8 @@ class Navbar extends PureComponent<Props> {
       separatorColor,
       renderRight,
       renderLeft,
-      absolutMiddle
+      absolutMiddle,
+      pointerEvents
     } = this.props;
 
     const renderMiddle = (
@@ -286,7 +289,7 @@ class Navbar extends PureComponent<Props> {
               )
             }
 
-            <View pointerEvents={onTitle ? 'box-only' : 'none'} style={[styles.viewMiddle, absolutMiddle ? styles.absolutMiddle : undefined]}>
+            <View pointerEvents={pointerEvents} style={[styles.viewMiddle, absolutMiddle ? styles.absolutMiddle : undefined]}>
               {
                 title ? renderMiddle : middleComponent ? middleComponent : null
               }
@@ -352,6 +355,7 @@ interface Props {
   separatorColor?: string;
   renderRight?: () => void;
   renderLeft?: () => void;
+  pointerEvents?: 'box-only' | 'none' | 'box-all'
 }
 
 export default Navbar;

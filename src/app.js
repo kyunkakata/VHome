@@ -12,6 +12,10 @@ import { Alert, Loading } from './components';
 
 class App extends PureComponent {
   currentState = '';
+  constructor(props) {
+    super(props);
+
+  }
 
   componentDidMount() {
     AppState.addEventListener('change', this._handleAppStateChange);
@@ -45,6 +49,7 @@ class App extends PureComponent {
    */
   _handleNetworkChange = (data) => {
     console.log('_handleNetworkChange', data)
+    // window.customLoading
   }
 
   render() {

@@ -14,11 +14,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     overflow: 'hidden',
     paddingHorizontal: 10,
-    borderWidth: 1
+    borderWidth: 0.7
   },
   title: {
     fontSize: common.FONT_SIZE_CONTENT,
-    fontWeight: common.FONT_WEIGHT_HEADER
+    fontWeight: common.FONT_WEIGHT_TITLE
   }
 });
 

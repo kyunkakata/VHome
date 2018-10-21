@@ -95,7 +95,9 @@ class Alert extends PureComponent<Props> {
       message: props.message ? props.message : null,
       leftButton: props.leftButton ? props.leftButton : null,
       rightButton: props.rightButton ? props.rightButton : null,
-      onClose: props.onClose ? props.onClose() : null
+      onClose: props.onClose ? props.onClose() : null,
+      renderContent: props.renderContent ? props.renderContent : null,
+      width: props.width ? props.width : null
     }
     this.open()
   }
@@ -201,7 +203,7 @@ class Alert extends PureComponent<Props> {
               }}
               style={styles.button}
             >
-              <Text style={styles.txtButton}>
+              <Text style={[styles.txtButton, leftButton.textStyle]}>
                 {leftButton.text}
               </Text>
             </TouchableOpacity>
@@ -225,7 +227,7 @@ class Alert extends PureComponent<Props> {
                 leftButton ? { borderLeftWidth: 1, borderLeftColor: common.ALERT_COLOR_SEPARATOR } : undefined
               ]}
             >
-              <Text style={styles.txtButton}>
+              <Text style={[styles.txtButton, middleButton.textStyle]}>
                 {middleButton.text}
               </Text>
             </TouchableOpacity>
@@ -250,10 +252,10 @@ class Alert extends PureComponent<Props> {
               }}
               style={[
                 styles.button,
-                (leftButton || middleButton) ? { borderLeftWidth: 1, borderLeftColor: common().ALERT_COLOR_SEPARATOR } : undefined
+                (leftButton || middleButton) ? { borderLeftWidth: 1, borderLeftColor: common.ALERT_COLOR_SEPARATOR } : undefined
               ]}
             >
-              <Text style={styles.txtButton}>
+              <Text style={[styles.txtButton, rightButton.textStyle]}>
                 {rightButton.text}
               </Text>
             </TouchableOpacity>
@@ -264,13 +266,14 @@ class Alert extends PureComponent<Props> {
   }
 
   renderContent = () => {
-    const {
+    let {
       renderContent
     } = this.props;
     let message = null
     let title = null
 
     if (this.dataAlert) {
+      renderContent = this.dataAlert.renderContent
       message = this.dataAlert.message
       title = this.dataAlert.title
     } else {
@@ -299,10 +302,13 @@ class Alert extends PureComponent<Props> {
     const {
       origin,
       backgroundOverlay,
-      width,
       style,
       hasTextInput
     } = this.props;
+    let { width } = this.props;
+    if (this.dataAlert && this.dataAlert.width) {
+      width = this.dataAlert.width
+    }
 
     const {
       isOpen,

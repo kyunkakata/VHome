@@ -79,7 +79,7 @@ Button.defaultProps = {
   rounded: false,
   borderRadius: 22,
   full: false,
-  width: Math.min(300, SCREEN.width - 24),
+  width: Math.min(270, SCREEN.width - 24),
   height: 44,
   disable: false
 }

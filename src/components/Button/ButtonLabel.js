@@ -46,7 +46,8 @@ class ButtonLabel extends PureComponent<Props> {
       titleStyle,
       firstTitleStyle,
       onPress,
-      textUnderline
+      textUnderline,
+      underlineColor
     } = this.props;
     const Component = disable || !onPress ? View : TouchableOpacity;
 
@@ -73,7 +74,7 @@ class ButtonLabel extends PureComponent<Props> {
             }
           }}
         >
-          <Text numberOfLines={1} style={[styles.txtTitle, titleStyle, textUnderline ? { textDecorationLine: 'underline' } : undefined]}>
+          <Text numberOfLines={1} style={[styles.txtTitle, titleStyle, textUnderline ? { textDecorationLine: 'underline', textDecorationColor: underlineColor } : undefined]}>
             {title}
           </Text>
         </Component>
@@ -88,7 +89,8 @@ ButtonLabel.defaultProps = {
   style: null,
   titleStyle: null,
   firstTitle: null,
-  textUnderline: false
+  textUnderline: false,
+  underlineColor: 'rgba(0, 0, 0, 0.4)'
 }
 
 interface Props {
@@ -97,6 +99,7 @@ interface Props {
   onPress?: () => void;
   disable?: boolean;
   textUnderline?: boolean;
+  underlineColor?: string;
   style?: StyleProp<ViewStyle>;
   titleStyle?: StyleProp<TextStyle>;
   firstTitleStyle?: StyleProp<TextStyle>;

@@ -5,8 +5,10 @@ const KeyBoardScroll = ({ children, ...otherProps }) => {
   return (
     <KeyboardAwareScrollView
       extraScrollHeight={20}
-			keyboardShouldPersistTaps="always"
-      contentContainerStyle={{flexGrow: 1}}
+      keyboardShouldPersistTaps='handled'
+      keyboardDismissMode='on-drag'
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={{ flexGrow: 1 }}
       enableResetScrollToCoords={true}
       enableOnAndroid={true}
       scrollEnabled={true}

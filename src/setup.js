@@ -13,12 +13,15 @@ import { CustomLayoutSpring } from './common/animation';
 import App from './app';
 import configureStore from './redux/configureStore';
 import { setFont } from './common/utils';
+import { Loading } from './components';
+import * as common from './configs/common';
 
 // Disable ignored remote debugger
 YellowBox.ignoreWarnings([
   'Remote debugger',
   'Warning: isMounted(...) is deprecated in plain JavaScript React classes',
-  'Required dispatch_sync to load constants for RNDeviceInfo'
+  'Required dispatch_sync to load constants for RNDeviceInfo',
+  'Module RNFetchBlob requires main queue setup since it overrides `constantsToExport` but doesn\'t implement `requiresMainQueueSetup`'
 ]);
 Text.allowFontScaling = false;
 
@@ -49,11 +52,15 @@ class Setup extends PureComponent {
   }
 
   render() {
-    const { store } = this.state;
+    const { store, isLoading } = this.state;
+
+    if (isLoading) {
+      return <Loading colorIndicator={common.ICON_COLOR_BLACK} />
+    }
 
     return (
       <View style={{ flex: 1 }}>
-        <StatusBar translucent barStyle='light-content' />
+        <StatusBar barStyle='light-content' />
         <Provider store={store}>
           <App />
         </Provider>
