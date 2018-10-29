@@ -10,6 +10,7 @@ import { Navbar, Button, Input, InputPassword, ButtonLabel, KeyboardScroll } fro
 import * as common from '../../configs/common';
 import langs from '../../languages/common';
 import * as imgs from '../../configs/imgs';
+import { global } from '../../configs/global';
 
 class Login extends PureComponent {
   constructor(props) {
@@ -121,7 +122,7 @@ class Login extends PureComponent {
 
     const { user, pass } = this.state;
     if (user.trim().length == 0) {
-      window.customAlert.alert({
+      global.Alert.alert({
         title: langs.notifycation,
         message: langs.errorPhonenumberIsNull,
         leftButton: { text: langs.ok }
@@ -130,7 +131,7 @@ class Login extends PureComponent {
     }
 
     if (pass.trim().length == 0) {
-      window.customAlert.alert({
+      global.Alert.alert({
         title: langs.notifycation,
         message: langs.errorPassIsNull,
         leftButton: { text: langs.ok }

@@ -5,8 +5,8 @@
 
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import HomeProductComponent from '../../screens/dashboard/product/product-Home';
-import HomeUserComponent from '../../screens/dashboard/user/user-Home';
+import HomeProductComponent from '../../screens/home/product/product-Home';
+import HomeUserComponent from '../../screens/home/user/user-Home';
 
 class Home extends PureComponent {
   render() {

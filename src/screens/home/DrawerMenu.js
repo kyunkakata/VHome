@@ -8,6 +8,7 @@ import { StyleSheet, View, Text, TouchableOpacity, ScrollView, LayoutAnimation, 
 import { connect } from 'react-redux';
 import Communications from 'react-native-communications';
 import Icon from 'react-native-vector-icons/dist/MaterialIcons';
+import { global } from '../../configs/global';
 import { Avatar, Row, ButtonIcon } from '../../components';
 import { CustomLayoutSpring } from '../../common/animation';
 import { setLanguage } from '../../redux/actions/config';
@@ -195,7 +196,7 @@ class DrawerMenu extends PureComponent {
   }
 
   onPolicyTerms = () => {
-    window.customAlert.alert({
+    global.Alert.alert({
       renderContent: this.renderAlertContent,
       leftButton: {
         text: langs.continute,
@@ -213,14 +214,14 @@ class DrawerMenu extends PureComponent {
   }
 
   onVHomeIntro = () => {
-    window.customAlert.alert({
+    global.Alert.alert({
       renderContent: this.renderAlertVHomeIntro,
       width: SCREEN.width - 32
     })
   }
 
   onDismissAlert = () => {
-    window.customAlert.close()
+    global.Alert.close()
   }
 
   onCallHotline = () => {

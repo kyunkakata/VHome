@@ -5,8 +5,8 @@
 
 export const FONT_SIZE_HUGE = 24;
 export const FONT_SIZE_HEADER = 20;
-export const FONT_SIZE_TITLE = 16;
-export const FONT_SIZE_CONTENT = 14;
+export const FONT_SIZE_TITLE = 15;
+export const FONT_SIZE_CONTENT = 13;
 export const FONT_SIZE_SMALL = 12;
 
 export const FONT_WEIGHT_HEADER = '500';

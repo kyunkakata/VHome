@@ -13,6 +13,7 @@ import {
   Button, ButtonLabel, Input, Avatar, Navbar, ButtonIcon,
   Row, ButtonLabelBorder, KeyboardScroll, ActionSheet
 } from '../../components';
+import { global } from '../../configs/global';
 import * as common from '../../configs/common';
 import langs from '../../languages/common';
 
@@ -333,7 +334,7 @@ class Profile extends PureComponent {
     const { userInfo } = this.state;
 
     if (userInfo.name.trim().length == 0) {
-      window.customAlert.alert({
+      global.Alert.alert({
         title: langs.notifycation,
         message: langs.errorUsernameIsNull,
         leftButton: { text: langs.ok }
@@ -342,7 +343,7 @@ class Profile extends PureComponent {
     }
 
     if (userInfo.phone.trim().length == 0) {
-      window.customAlert.alert({
+      global.Alert.alert({
         title: langs.notifycation,
         message: langs.errorPhonenumberIsNull,
         leftButton: { text: langs.ok }

@@ -7,6 +7,7 @@ import React, { PureComponent } from 'react';
 import { StyleSheet, View, ScrollView } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { Navbar, Button, Input, InputPassword, KeyboardScroll, Checkbox, ButtonLabel } from '../../components';
+import { global } from '../../configs/global';
 import * as common from '../../configs/common';
 import langs from '../../languages/common';
 
@@ -166,7 +167,7 @@ class Register extends PureComponent {
     const { registerInfo } = this.state;
 
     if (registerInfo.phonenumber.trim().length == 0) {
-      window.customAlert.alert({
+      global.Alert.alert({
         title: langs.notifycation,
         message: langs.errorPhonenumberIsNull,
         leftButton: { text: langs.ok }
@@ -175,7 +176,7 @@ class Register extends PureComponent {
     }
 
     if (registerInfo.user.trim().length == 0) {
-      window.customAlert.alert({
+      global.Alert.alert({
         title: langs.notifycation,
         message: langs.errorUsernameIsNull,
         leftButton: { text: langs.ok }
@@ -184,7 +185,7 @@ class Register extends PureComponent {
     }
 
     if (registerInfo.pass.trim().length == 0) {
-      window.customAlert.alert({
+      global.Alert.alert({
         title: langs.notifycation,
         message: langs.errorPassIsNull,
         leftButton: { text: langs.ok }
@@ -193,7 +194,7 @@ class Register extends PureComponent {
     }
 
     if (registerInfo.retypePass.trim().length == 0) {
-      window.customAlert.alert({
+      global.Alert.alert({
         title: langs.notifycation,
         message: langs.errorRetypePassIsNull,
         leftButton: { text: langs.ok }
@@ -202,7 +203,7 @@ class Register extends PureComponent {
     }
 
     if (registerInfo.pass !== registerInfo.retypePass) {
-      window.customAlert.alert({
+      global.Alert.alert({
         title: langs.notifycation,
         message: langs.errorRetypePasswordWrong,
         leftButton: { text: langs.ok }
@@ -211,7 +212,7 @@ class Register extends PureComponent {
     }
 
     if (!registerInfo.policy) {
-      window.customAlert.alert({
+      global.Alert.alert({
         title: langs.notifycation,
         message: langs.errorPolicy,
         leftButton: { text: langs.ok }

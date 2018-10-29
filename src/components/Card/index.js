@@ -4,7 +4,9 @@
 */
 
 import CardService from './CardService';
+import CardRewardPoints from './CardRewardPoints';
 
 export {
-  CardService
+  CardService,
+  CardRewardPoints
 }

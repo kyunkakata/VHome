@@ -10,7 +10,7 @@ export default {
   runAfterInteractions: f => {
     // ensure f get called, timeout at 500ms
     let called = false;
-    const timeout = setTimeout(() => { called = true; f() }, 200);
+    const timeout = setTimeout(() => { called = true; f() }, 250);
     InteractionManager.runAfterInteractions(() => {
       if (called) return;
       clearTimeout(timeout);

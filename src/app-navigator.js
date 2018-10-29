@@ -12,12 +12,13 @@ import Start from './containers/start';
 import Login from './containers/login';
 import Register from './containers/register';
 import ForgotPassword from './containers/forgot-password';
-import DrawerMenu from './screens/dashboard/DrawerMenu';
+import DrawerMenu from './screens/home/DrawerMenu';
 import Home from './containers/home';
 import RewardPoints from './containers/reward-points';
 import History from './containers/history';
 import Inbox from './containers/inbox';
 import Profile from './containers/profile';
+import UserDetailService from './containers/home/user-DetailService';
 
 class AppNavigator extends PureComponent {
   render() {
@@ -52,13 +53,20 @@ class AppNavigator extends PureComponent {
             panHandlers={null}
             contentComponent={DrawerMenu}
             drawerWidth={300}
-          // initial
+            initial
           >
             <Scene key='dashboard' hideNavBar panHandlers={null}>
               <Scene
                 key='home'
                 component={Home}
                 hideNavBar
+              />
+              <Scene
+                key='userDetailService'
+                component={UserDetailService}
+                hideNavBar
+                panHandlers
+              // initial
               />
               <Scene
                 key='rewardPoints'

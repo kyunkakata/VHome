@@ -63,6 +63,16 @@ let langs = new LocalizedStrings({
     unknow: 'Unknow',
     fromLibrary: 'Select from library',
     camera: 'Take a photo',
+    point: 'points',
+    redeemReward: 'Redeem reward',
+    callService: 'Call service',
+    next: 'Next',
+    stepOne: 'Step 1',
+    stepTwo: 'Step 2',
+    stepThree: 'Step 3',
+    customerInfo: 'Customer info',
+    setDateTime: 'Date and time',
+    yourProblem: 'what is your problem?'
   },
   vi: {
     login: 'Đăng nhập',
@@ -121,6 +131,16 @@ let langs = new LocalizedStrings({
     unknow: 'Không biết',
     fromLibrary: 'Chọn ảnh từ thư viện',
     camera: 'Chụp ảnh',
+    point: 'điểm',
+    redeemReward: 'Đổi thưởng',
+    callService: 'Gọi dịch vụ',
+    next: 'Tiếp theo',
+    stepOne: 'Bước 1',
+    stepTwo: 'Bước 2',
+    stepThree: 'Bước 3',
+    customerInfo: 'Thông tin khách hàng',
+    setDateTime: 'Đặt ngày và giờ',
+    yourProblem: 'Bạn gặp phải vấn đề gì?'
   }
 })
 

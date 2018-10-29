@@ -9,6 +9,7 @@ import { RNNetworkStateEventEmitter } from "react-native-network-state";
 import AppNavigator from './app-navigator';
 import Notifi from './notification';
 import { Alert, Loading } from './components';
+import { global } from './configs/global';
 
 class App extends PureComponent {
   currentState = '';
@@ -49,7 +50,7 @@ class App extends PureComponent {
    */
   _handleNetworkChange = (data) => {
     console.log('_handleNetworkChange', data)
-    // window.customLoading
+    // global.Loading
   }
 
   render() {
@@ -57,8 +58,8 @@ class App extends PureComponent {
       <View style={{ flex: 1 }}>
         <AppNavigator />
         <Notifi />
-        <Loading ref={ref => window.customLoading = ref} loadingRef />
-        <Alert ref={ref => window.customAlert = ref} />
+        <Loading ref={ref => global.Loading = ref} loadingRef />
+        <Alert ref={ref => global.Alert = ref} />
       </View>
     );
   }

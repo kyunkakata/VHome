@@ -4,12 +4,29 @@
 */
 
 import React, { PureComponent } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, FlatList } from 'react-native';
 import { Navbar } from '../../components';
+import RowInboxUser from './RowInboxUser';
 import * as common from '../../configs/common';
 import langs from '../../languages/common';
 
+const data = [
+  { title: 'Điểm thưởng V-Home', content: 'Bạn vừa được tặng thêm 50 điểm từ V-Home, điểm thưởng được tích luỹ trong phần điểm', time: 1540125596968 },
+  { title: 'Gọi dịch vụ thành công', content: 'Nguyễn Tuấn Anh đã nhận dịch vụ thuê máy móc của bạn', time: 1540125596968 },
+  { title: 'Điểm thưởng V-Home', content: 'Bạn vừa được tặng thêm 50 điểm từ V-Home, điểm thưởng được tích luỹ trong phần điểm', time: 1540125596968 },
+  { title: 'Điểm thưởng V-Home', content: 'Bạn vừa được tặng thêm 50 điểm từ V-Home, điểm thưởng được tích luỹ trong phần điểm', time: 1540125596968 },
+  { title: 'Điểm thưởng V-Home', content: 'Bạn vừa được tặng thêm 50 điểm từ V-Home, điểm thưởng được tích luỹ trong phần điểm', time: 1540125596968 },
+  { title: 'Điểm thưởng V-Home', content: 'Bạn vừa được tặng thêm 50 điểm từ V-Home, điểm thưởng được tích luỹ trong phần điểm', time: 1540125596968 },
+  { title: 'Điểm thưởng V-Home', content: 'Bạn vừa được tặng thêm 50 điểm từ V-Home, điểm thưởng được tích luỹ trong phần điểm', time: 1540125596968 },
+]
+
 class Inbox extends PureComponent {
+  renderItem = ({ item, index }) => {
+    return (
+      <RowInboxUser item={item} language={this.props.language} />
+    )
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -19,7 +36,12 @@ class Inbox extends PureComponent {
           back
         />
         <View style={styles.viewContent}>
-          <Text>Inbox Component</Text>
+          <FlatList
+            data={data}
+            keyExtractor={(item, index) => String(index)}
+            renderItem={this.renderItem}
+            contentContainerStyle={styles.viewFlatlist}
+          />
         </View>
       </View>
     );
@@ -33,6 +55,9 @@ const styles = StyleSheet.create({
   },
   viewContent: {
     flex: 1
+  },
+  viewFlatlist: {
+    paddingBottom: 20
   }
 });
 

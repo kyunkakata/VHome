@@ -95,11 +95,16 @@ class Alert extends PureComponent<Props> {
       message: props.message ? props.message : null,
       leftButton: props.leftButton ? props.leftButton : null,
       rightButton: props.rightButton ? props.rightButton : null,
-      onClose: props.onClose ? props.onClose() : null,
+      onClose: props.onClose ? props.onClose : null,
       renderContent: props.renderContent ? props.renderContent : null,
-      width: props.width ? props.width : null
+      width: props.width ? props.width : null,
+      borderRadius: props.borderRadius ? props.borderRadius : null,
     }
     this.open()
+  }
+
+  update = () => {
+    this.forceUpdate()
   }
 
   open = () => {
@@ -305,9 +310,13 @@ class Alert extends PureComponent<Props> {
       style,
       hasTextInput
     } = this.props;
-    let { width } = this.props;
+    let { width, borderRadius } = this.props;
     if (this.dataAlert && this.dataAlert.width) {
       width = this.dataAlert.width
+    }
+
+    if (this.dataAlert && this.dataAlert.borderRadius) {
+      borderRadius = this.dataAlert.borderRadius
     }
 
     const {
@@ -319,6 +328,10 @@ class Alert extends PureComponent<Props> {
 
     const lightboxOpacityStyle = {
       opacity: openVal.interpolate({ inputRange: [0, 1], outputRange: [0.1, target.opacity] })
+    }
+
+    const contentOpacityStyle = {
+      opacity: openVal.interpolate({ inputRange: [0, 1], outputRange: [0, 1] })
     }
 
     const openStyle = [styles.open, {
@@ -344,13 +357,13 @@ class Alert extends PureComponent<Props> {
     );
 
     const content = (
-      <Animated.View pointerEvents='box-none' style={[openStyle, styles.center]}>
+      <Animated.View pointerEvents='box-none' style={[openStyle, contentOpacityStyle, styles.center]}>
         <View style={
           [
             styles.content,
             {
-              width: width,
-              borderRadius: 12,
+              width,
+              borderRadius,
               overflow: 'hidden',
               backgroundColor: common.ALERT_BACKGROUND_COLOR,
             }, style
@@ -388,9 +401,10 @@ Alert.defaultProps = {
   },
   springConfig: { tension: 30, friction: 7 },
   isOpen: false,
-  backgroundOverlay: 'rgba(0, 0, 0, 0.3)',
+  backgroundOverlay: 'rgba(0, 0, 0, 1)',
   width: Math.min(266, SCREEN.width - 16),
-  hasTextInput: false
+  hasTextInput: false,
+  borderRadius: 12
 }
 
 type OriginStatic = {
@@ -415,6 +429,7 @@ interface Props {
   origin?: OriginStatic;
   springConfig?: SpringConfigStatic;
   message?: string;
+  borderRadius?: number;
   title?: string;
   leftButton?: ButtonStatic;
   rightButton?: ButtonStatic;

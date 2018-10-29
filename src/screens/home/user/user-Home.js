@@ -29,6 +29,7 @@ class Home extends PureComponent {
         image={item.image}
         title={item.name}
         style={[styles.card, index % 2 == 0 ? { marginRight: 16 } : undefined]}
+        onPress={() => this.onViewDetailService(item)}
       />
     )
   }
@@ -38,7 +39,6 @@ class Home extends PureComponent {
       <Search
         onTitle
         placeholder={langs.searchService}
-      // style={{ marginBottom: 8 }}
       />
     )
 
@@ -65,6 +65,10 @@ class Home extends PureComponent {
         </View>
       </View>
     );
+  }
+
+  onViewDetailService = (service) => {
+    Actions.userDetailService({ service })
   }
 
   onPressMoreMenu = () => {

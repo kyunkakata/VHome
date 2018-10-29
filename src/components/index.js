@@ -10,7 +10,7 @@ import Loading from './Loading';
 import { Input, InputPassword } from './Input';
 import KeyboardScroll from './KeyboardScroll/KeyBoardScroll';
 import { Checkbox } from './Checkbox';
-import { CardService } from './Card';
+import { CardService, CardRewardPoints } from './Card';
 import { Avatar } from './Avatar';
 import { Row } from './Row';
 import Search from './Search';
@@ -29,6 +29,7 @@ export {
   KeyboardScroll,
   Checkbox,
   CardService,
+  CardRewardPoints,
   Avatar,
   Row,
   Search,

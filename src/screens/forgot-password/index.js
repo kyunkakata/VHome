@@ -7,6 +7,7 @@ import React, { PureComponent } from 'react';
 import { StyleSheet, View, Text, Keyboard, TouchableWithoutFeedback } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import LinearGradient from 'react-native-linear-gradient';
+import { global } from '../../configs/global';
 import { Navbar, Button, Input, ButtonLabel } from '../../components';
 import * as common from '../../configs/common';
 import langs from '../../languages/common';
@@ -98,7 +99,7 @@ class ForgotPassword extends PureComponent {
   handRequirePassword = () => {
     const { phonenumber } = this.state;
     if (phonenumber.trim().length == 0) {
-      window.customAlert.alert({
+      global.Alert.alert({
         title: langs.notifycation,
         message: langs.errorPhonenumberIsNull,
         leftButton: { text: langs.ok }
@@ -106,7 +107,7 @@ class ForgotPassword extends PureComponent {
       return;
     }
 
-    window.customAlert.alert({
+    global.Alert.alert({
       renderContent: this.renderAlertContent,
       leftButton: {
         text: langs.login,

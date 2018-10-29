@@ -14,13 +14,14 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     justifyContent: 'flex-end',
     position: 'relative',
-    // elevation: 2,
-    // shadowOffset: {
-    //   width: 1,
-    //   height: 1
-    // },
-    // shadowRadius: 2,
-    // shadowOpacity: 0.6
+    shadowColor: 'rgba(0, 0, 0, 0.6)',
+    elevation: 2,
+    shadowOffset: {
+      width: 1,
+      height: 1
+    },
+    shadowRadius: 2,
+    shadowOpacity: 0.6
   },
   image: {
     ...StyleSheet.absoluteFillObject
